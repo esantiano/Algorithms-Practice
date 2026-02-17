@@ -94,10 +94,12 @@ class Solution:
             return None
         head = root
         while head:
+            # initialize dummy node and temp pointer
             dummy = Node(0)
             temp = dummy
 
-            while head:
+            while head: # we continue this loop until the head pointer reaches the end of the current level (None)
+                # make connections in the next level down using temp 
                 if head.left:
                     temp.next = head.left
                     temp=temp.next
@@ -106,6 +108,7 @@ class Solution:
                     temp=temp.next
                 head=head.next
             
+            # use the dummy node to move the head pointer to the next level to process. 
             head=dummy.next
         
         return root
