@@ -28,7 +28,7 @@ class Solution:
 
 # Algorithm:
 #   For this solution we use a stack, dictionary of nodes and parent nodes, and a set to help us determine the LCA of p and q.
-#   Starting at the root node we iteratively build a dicionary of nodes and their parent nodes until the dictionary contains the ndoes p and q. (key:value = childNode:parentNode)
+#   Starting at the root node we iteratively build a dicionary of nodes and their parent nodes until the dictionary contains the nodes p and q. (key:value = childNode:parentNode)
 #   Once the dictionary contains p and q we can start building our ancestors set. 
 #   Using the dicionary we add all ancestors of the node p to the set including p itself. We will also update the pointer p using the dictionary. (We continue doing this until p points to None. Eventually p will be updated to the original root node whose parent is None)
 #   After adding all ancestors of the node p to the set we can use the dictionary to search for node q's ancestor. We will also update the pointer q using the dictionary. (At this point the LCA will be inside the set. We continue doing this until q points to one of the nodes in the set which will be the LCA.)
